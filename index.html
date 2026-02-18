@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Blessing Quiz</title>
     <style>
-        /* CSS: This makes the code beautiful */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -42,7 +41,6 @@
             min-height: 60px;
         }
 
-        /* Styling the buttons */
         .option-btn {
             display: block;
             width: 100%;
@@ -87,12 +85,11 @@
     <div id="quiz-container">
         <div id="quiz-screen">
             <h1>Blessing Quiz</h1>
-            <div id="timer-text">⏱ <span id="seconds">10</span>s</div>
+            <div id="timer-text">⏱ <span id="seconds">5</span>s</div>
             
             <div class="question-text" id="question">Loading...</div>
             
-            <div id="options-container">
-                </div>
+            <div id="options-container"></div>
         </div>
 
         <div id="result-screen" class="hidden">
@@ -114,18 +111,43 @@
                 q: "What does she laugh like?",
                 options: ["A bird", "A car engine", "A goat 😂", "A broken flute"],
                 correct: 2
+            },
+            {
+                q: "What is Blessing's favorite food?",
+                options: ["Jollof Rice", "Pounded Yam", "Fried Plantain", "Indomie"],
+                correct: 2 
+            },
+            {
+                q: "What is her secret superpower?",
+                options: ["Sleeping all day", "Finishing data in 1 hour", "Eating without getting fat", "Late-night chatting"],
+                correct: 0 
+            },
+            {
+                q: "If Blessing was an animal, she'd be a...",
+                options: ["Lioness", "Lazy Panda", "Sassy Cat", "Busy Bee"],
+                correct: 1
+            },
+            {
+                q: "What is her favorite color?",
+                options: ["Blue", "Pink", "Yellow", "Purple"],
+                correct: 3
+            },
+            {
+                q: "How many hours does she spend on her phone?",
+                options: ["2 hours", "5 hours", "25 hours a day", "She doesn't use a phone"],
+                correct: 1 
             }
         ];
 
         let currentIdx = 0;
         let score = 0;
-        let timeLeft = 10;
+        let timeLeft = 5; // Timer changed to 5
         let timer;
 
         function loadQuestion() {
             if (currentIdx >= questions.length) return showResult();
 
-            timeLeft = 10;
+            timeLeft = 5; // Reset to 5 for each new question
             document.getElementById("seconds").innerText = timeLeft;
             startTimer();
 
